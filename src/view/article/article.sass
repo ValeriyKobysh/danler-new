@@ -1,0 +1,127 @@
+@import '../../style/default.sass'
+@import '../../components/header/header.sass'
+@import '../../components/sidebar/sidebar.sass'
+@import '../../components/basket/basket.sass'
+@import '../../components/dialog/dialog.sass'
+@import '../../components/search/search.sass'
+@import '../../components/breadcrumbs/breadcrumbs.sass'
+@import '../../components/social/social.sass'
+@import '../../components/footer/footer.sass'
+@import '../../components/dialog/callback.sass'
+@import '../../components/submenu/submenu.sass'
+
+.article
+
+    &__content
+        background-color: bg-color(main-light)
+        border-radius: $radius
+        padding: 30px
+        height: 100%
+
+
+    &__date
+        display: flex
+        align-items: center
+        margin-bottom: 30px
+        color: text-color(light)
+
+        img
+            margin-right: 15px
+            height: 25px
+
+    &__social
+        width: 100%
+        padding: 15px
+
+        &-heading
+            text-align: center
+            text-transform: uppercase
+            font-weight: 400
+            margin-bottom: 30px
+            color: text-color(light)
+
+        &-list
+            +alignment()
+            flex-wrap: wrap
+
+        &-item
+            margin-right: 15px
+            margin-bottom: 15px
+
+            &:last-child
+                margin-right: 0
+
+        &-link
+            border-radius: 5px
+            +alignment($jc: start)
+            +transition()
+            color: text-color(light)
+            fill: text-color(light)
+            overflow: hidden
+
+            &_fb
+                background-color: map-get($social-color, facebook)
+
+                &:hover
+                    background-color: darken(map-get($social-color, facebook), 10%)
+
+                .article__social-icon
+                    background-color: darken(map-get($social-color, facebook), 10%)
+
+            &_gp
+                background-color: map-get($social-color, google-plus)
+
+                &:hover
+                    background-color: darken(map-get($social-color, google-plus), 10%)
+
+                .article__social-icon
+                    background-color: darken(map-get($social-color, google-plus), 10%)
+
+            &_tw
+                background-color: map-get($social-color, twitter)
+
+                &:hover
+                    background-color: darken(map-get($social-color, twitter), 10%)
+
+                .article__social-icon
+                    background-color: darken(map-get($social-color, twitter), 10%)
+
+            &_vk
+                background-color: map-get($social-color, vk)
+
+                &:hover
+                    background-color: darken(map-get($social-color, vk), 10%)
+
+                .article__social-icon
+                    background-color: darken(map-get($social-color, vk), 10%)
+
+        &-icon
+            +size(45px)
+            +alignment()
+
+            svg
+                height: 50%
+
++media-breakpoint-up(breakpoints(md))
+    .article
+
+        &__social
+
+            &-heading
+                font-size: rem(20px)
+
+            &-link
+                +size(150px, 45px)
+
+            &-icon
+                margin-right: 10px
+
+
++media-breakpoint-down(breakpoints(md))
+    .article
+
+        &-heading
+            font-size: rem(16px)
+
+        &__social-text
+            display: none

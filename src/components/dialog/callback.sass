@@ -1,0 +1,43 @@
+.callback
+    position: fixed
+    right: 60px
+    bottom: 30px
+
+    &__trigger
+        +size(100px)
+        border: 1px solid bg-color(accent)
+        opacity: .5
+        +transition()
+
+        &.active, &:hover
+            opacity: 1
+            cursor: pointer
+
+
+    &__trigger, &__image, &__control
+        +alignment()
+        border-radius: 50%
+
+    &__image
+        +size(70px)
+        background-color: bg-color(accent)
+        fill: bg-color(main-light)
+
+    &__controls
+        display: flex
+        flex-direction: column
+        align-items: center
+        top: calc(-100% - 30px)
+        width: 100%
+        position: absolute
+
+    &__control
+        background-color: bg-color(accent)
+        fill: bg-color(main-light)
+        flex-shrink: 0
+        +size(50px)
+        margin-bottom: 15px
+        cursor: pointer
+
+        svg
+            height: 22px

@@ -1,0 +1,62 @@
+.social
+    +alignment($jc: end)
+    width: 100%
+    height: 45px
+    padding: 0 30px
+
+    &__title
+        margin-right: 30px
+        color: text-color(light)
+        font-size: rem(16px)
+    
+    &__list
+        display: flex
+        justify-content: flex-end
+
+    &__item
+        margin-left: 15px
+
+        &:first-child
+            margin-left: 0
+
+    &__link
+        border-radius: 5px
+        +size(25px)
+        +alignment()
+        +transition()
+
+        svg
+            height: 50%
+            +transition()
+
+        &_fb
+            fill: map-get($social-color, facebook)
+            border: 1px solid map-get($social-color, facebook)
+
+            &:hover
+                fill: lighten(map-get($social-color, facebook), 10%)
+                border-color: lighten(map-get($social-color, facebook), 10%)
+
+        &_tw
+            fill: map-get($social-color, twitter)
+            border: 1px solid map-get($social-color, twitter)
+
+            &:hover
+                fill: lighten(map-get($social-color, twitter), 10%)
+                border-color: lighten(map-get($social-color, twitter), 10%)
+
+        &_vk
+            fill: map-get($social-color, vk)
+            border: 1px solid map-get($social-color, vk)
+
+            &:hover
+                fill: lighten(map-get($social-color, vk), 10%)
+                border-color: lighten(map-get($social-color, vk), 10%)
+
+        &_gp
+            fill: map-get($social-color, google-plus)
+            border: 1px solid map-get($social-color, google-plus)
+
+            &:hover
+                fill: lighten(map-get($social-color, google-plus), 10%)
+                border-color: lighten(map-get($social-color, google-plus), 10%)

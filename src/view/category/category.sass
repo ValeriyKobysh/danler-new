@@ -1,0 +1,77 @@
+@import '../../style/default.sass'
+@import '../../components/header/header.sass'
+@import '../../components/basket/basket.sass'
+@import '../../components/dialog/dialog.sass'
+@import '../../components/search/search.sass'
+@import '../../components/sidebar/sidebar.sass'
+@import '../../components/breadcrumbs/breadcrumbs.sass'
+@import '../../components/social/social.sass'
+@import '../../components/footer/footer.sass'
+@import '../../components/dialog/callback.sass'
+@import '../../components/submenu/submenu.sass'
+
+.category
+
+    &__content
+        background-color: bg-color(main-light)
+        border-radius: $radius
+        height: 100%
+        color: text-color(light)
+
+    &__list
+        display: flex
+        flex-wrap: wrap
+        margin-bottom: 30px
+
+    &__item
+        border: 1px solid bg-color(main)
+        border-radius: $radius
+        padding: 15px
+        margin: 0 15px 30px
+        min-width: $xs - 60
+        flex-grow: 1
+        +transition()
+
+        &:hover
+            border-color: bg-color(accent)
+        
+    &__link
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        color: text-color(light)
+        font-size: rem(16px)
+        line-height: rem(22px)
+
+    &__image
+        +alignment()
+        width: 100%
+        flex-shrink: 0
+        margin-bottom: 15px
+
+    &__count
+        font-weight: 700
+
++media-breakpoint-up(breakpoints(xl))
+    .category
+
+        &__item
+            width: calc(100% / 4 - 30px)
+
++media-breakpoint-up(breakpoints(sm))
+    .category
+
+        &__content
+            padding: 30px
+
++media-breakpoint-down(breakpoints(xl))
+    .category
+
+        &__item
+            width: calc(100% / 2 - 30px)
+
++media-breakpoint-down(breakpoints(sm))
+    .category
+
+        &__content
+            padding: 30px 15px

@@ -1,0 +1,68 @@
+.textarea, .field
+    border: 1px solid bg-color(main)
+    border-radius: $radius
+    color: text-color(light)
+    background-color: bg-color(main-light)
+    outline: none
+    font-size: rem(16px)
+    font-family: $baseff
+    +transition(border-color)
+
+    &:focus, &:hover, &.active
+        border-color: bg-color(accent)!important
+        color: text-color(hover)!important
+
+.field
+    height: 45px
+    padding: 0 15px
+
+.textarea
+    height: 160px
+    resize: none
+    padding: 15px
+
+.select
+    background-color: bg-color(main)
+    font-size: rem(16px)
+    line-height: rem(20px)
+    height: 45px
+    border-radius: $radius
+    position: relative
+    color: text-color(light)
+    display: flex
+    align-items: center
+    padding: 0 15px 0 45px
+    cursor: pointer
+    +transition()
+
+    &:before, &:after
+        content: ''
+        position: absolute
+        border-radius: 50%
+        flex-shrink: 0
+        +transition()
+        
+    &:before
+        +size(22px)
+        border: 2px solid bg-color(white)
+        left: 10px
+        top: 10px
+
+    &:after
+        +size(10px)
+        background-color: bg-color(white)
+        left: 18px
+        top: 18px
+
+    &:hover, &.checked
+        color: text-color(hover)
+
+        &:before
+            border-color: bg-color(accent)
+
+        &:after
+            background-color: bg-color(accent)
+
+    input[type="radio"]
+        display: none
+

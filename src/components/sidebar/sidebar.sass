@@ -1,0 +1,220 @@
+.sidebar
+    flex-shrink: 0
+    width: $xs
+    background-color: bg-color(main-light)
+
+    &__logo
+        height: 100px
+
+        &-link
+            display: flex
+            flex-direction: column
+            align-items: center
+
+        &-img
+            height: 75px
+
+        &-desk
+            font-size: rem(16px)
+            color: text-color(light)
+
+    &__menu, &__social
+        padding: 30px 15px 0
+
+    &__menu
+
+        &-item
+            margin-bottom: 15px
+            border: 1px solid bg-color(main)
+            border-radius: $radius
+            padding: 0 15px
+            +transition()
+
+            &:last-child
+                margin-bottom: 0
+
+            &.active, &:hover
+                border-color: bg-color(accent)
+                
+                .sidebar__menu-link
+                    color: text-color(hover)
+
+                .sidebar__menu-icon, .sidebar__menu-chevron
+                    fill: bg-color(accent)
+
+        &-link
+            display: flex
+            align-items: center
+            width: 100%
+            min-height: 50px
+            padding-left: 45px
+            position: relative
+            font-size: rem(20px)
+            color: text-color(light)
+            +transition()
+
+            &.dropdown
+
+                .sidebar__menu-chevron
+                    transform: rotate(90deg)
+
+        &-icon
+            fill: bg-color(white)
+            position: absolute
+            left: 0
+            top: 12.5px
+            +transition()
+
+            svg 
+                height: 25px
+
+        &-chevron
+            position: absolute
+            right: 15px
+            top: 15px
+            height: 20px
+            fill: bg-color(white)
+            +transition()
+
+            svg
+                height: 20px
+
+    &__catalog
+        padding: 15px 0
+
+        &-item
+            border-radius: $radius
+            background-color: bg-color(main)
+            overflow: hidden
+            margin-bottom: 15px
+
+            &:last-child
+                margin-bottom: 0
+
+            &:hover
+
+                .sidebar__catalog-link
+                    color: text-color(hover)
+
+                .sidebar__catalog-chevron
+                    fill: bg-color(accent)
+
+        &-link
+            display: flex
+            align-items: center
+            color: text-color(light)
+            padding-right: 15px
+            position: relative
+            font-size: rem(16px)
+            line-height: rem(24px)
+            +transition()
+
+        &-img
+            +size(100px, 75px)
+            flex-shrink: 0
+            margin-right: 15px
+
+            img
+                +size(100%)
+
+        &-chevron
+            fill: bg-color(white)
+            +transition()
+            flex-shrink: 0
+            margin-left: 15px
+            +transition()
+
+            svg
+                height: 20px
+
+    &__social
+        margin-bottom: 30px
+
+    &__social-wrap
+        padding: 15px
+        border: 1px solid bg-color(main)
+        border-radius: $radius
+
+    &__banners
+        width: $xs - 30
+        margin: 0 auto 30px
+
+    &__banner
+
+        &_f
+            background-color: bg-color(main-light)
+            border: 1px solid bg-color(main)
+            border-radius: $radius
+            padding-top: 53px
+            position: relative
+            margin-bottom: 30px
+
+            .sidebar__banner-icon
+                position: absolute
+                top: 20px
+                left: 7px
+
+            .sidebar__banner-heading
+                text-align: right
+                font-weight: 700
+                color: text-color(hover)
+                text-transform: uppercase
+                margin-bottom: 40px
+                padding-right: 15px
+
+            .sidebar__banner-desc
+                position: relative
+                z-index: 1
+                font-size: rem(14px)
+                padding-left: 50px
+                padding-right: 15px
+                margin-bottom: 10px
+                color: text-color(light)
+
+        &_s
+            background-color: bg-color(white)
+            border-radius: $radius
+            position: relative
+            height: 200px
+            display: flex
+            flex-direction: column
+            justify-content: center
+
+            .sidebar__banner-icon
+                padding-left: 20px
+                position: absolute
+                left: 0
+                top: 15%
+
+            .sidebar__banner-heading
+                font-weight: 700
+                text-transform: uppercase
+                color: text-color(dark)
+                font-size: rem(18px)
+                text-align: center
+                margin-bottom: 20px
+                padding-left: 90px
+
+            .sidebar__banner-desc
+                font-size: rem(14px)
+                color: text-color(dark)
+                line-height: rem(20px)
+                padding-left: 90px
+
++media-breakpoint-up(breakpoints(xl))
+
++media-breakpoint-between(breakpoints(lg), breakpoints(xl))
+
++media-breakpoint-down(breakpoints(bsxl))
+    .sidebar
+        position: absolute
+        top: 66px
+        left: -$xs
+        +transition()
+        z-index: 100
+
+        &.active
+            left: 0
+
+        &__logo
+            display: none

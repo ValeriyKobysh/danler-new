@@ -1,0 +1,98 @@
+@import '../../style/default.sass'
+@import '../../components/sidebar/sidebar.sass'
+@import '../../components/header/header.sass'
+@import '../../components/basket/basket.sass'
+@import '../../components/dialog/dialog.sass'
+@import '../../components/search/search.sass'
+@import '../../components/breadcrumbs/breadcrumbs.sass'
+@import '../../components/pagination/pagination.sass'
+@import '../../components/footer/footer.sass'
+@import '../../components/social/social.sass'
+@import '../../components/dialog/callback.sass'
+@import '../../components/submenu/submenu.sass'
+
+.articles
+    height: 100%
+    max-width: 1540px
+    margin: 0 auto
+
+    &__content
+        background-color: bg-color(main-light)
+        border-radius: $radius
+        padding: 30px 0 0
+        height: 100%
+
+    &__list
+        display: flex
+        flex-wrap: wrap
+
+    &__item
+        min-width: $xs - 30
+        flex-grow: 1
+        margin: 0 15px 30px
+        padding: 15px
+        display: flex
+        flex-direction: column
+        border: 1px solid bg-color(main)
+        border-radius: $radius
+        color: text-color(light)
+        font-size: rem(16px)
+        +transition()
+
+        &:hover
+            border-color: bg-color(accent)
+
+    &__title, &__date, &__image
+        margin-bottom: 15px
+
+    &__image
+        width: 100%
+
+        img
+            width: 100%
+
+    &__title
+        line-height: rem(22px)
+        font-weight: 700
+        display: block
+        text-align: center
+
+    &__date
+        display: flex
+        align-items: center
+
+        img
+            margin-right: 10px
+            +size(25px)
+
+    &__preview
+        line-height: rem(26px)
+        margin-bottom: 30px
+
+    &__btn
+        +alignment()
+        color: text-color(dark)
+
++media-breakpoint-up(breakpoints(xl))
+    .articles
+
+        &__item
+            width: calc(100% / 4 - 30px)
+
++media-breakpoint-between(breakpoints(lg), breakpoints(xl))
+    .articles
+
+        &__item
+            width: calc(100% / 3 - 30px)
+
++media-breakpoint-between(breakpoints(sm), breakpoints(lg))
+    .articles
+
+        &__item
+            width: calc(100% / 2 - 30px)
+
++media-breakpoint-down(breakpoints(sm))
+    .articles
+
+        &__item
+            width: 100%

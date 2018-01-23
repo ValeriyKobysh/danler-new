@@ -1,0 +1,42 @@
+.submenu
+    display: none
+    position: absolute
+    max-width: 1540px
+    background-color: rgba(bg-color(main), .7)
+    z-index: 200
+
+    &__list
+        display: flex
+        flex-wrap: wrap
+        max-width: 1440px
+        margin: 0 auto
+        padding: 15px
+
+    &__item
+        width: calc(100% / 4 - 30px)
+        margin: 0 15px 30px
+
+    &__link
+        display: flex
+        flex-direction: column
+        align-items: center
+        background-color: bg-color(main-light)
+        border-radius: $radius
+        padding: 15px
+        color: text-color(light)
+
+        .mark
+            font-weight: 700
+
+    &__img
+        margin-bottom: 15px
+
++media-breakpoint-up(breakpoints(lg))
+    .submenu
+        width: calc(100vw - 380px)
+        height: calc(100% - 100px)
+
++media-breakpoint-down(breakpoints(lg))
+    .submenu
+        width: 100%
+        height: calc(100% - 60px)

@@ -1,0 +1,65 @@
+@import "variables"
+@import "functions"
+@import "mixins"
+@import "fonts.scss"
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+.list, ul, ol
+    list-style-type: none
+
+.link
+    text-decoration: none
+
+.wrapper
+    flex-grow: 1
+    display: flex
+
+.heading
+    font-size: rem(28px)
+    line-height: rem(32px)
+    font-weight: 400
+    color: text-color(light)
+    width: 100%
+    position: relative
+    padding-bottom: 15px
+    margin-bottom: 30px
+    
+    &:after
+        content: ''
+        position: absolute
+        bottom: 0
+        left: 0
+        display: flex
+        +size(50%, 2px)
+        background-color: bg-color(accent)
+
+html, body
+    height: 100%
+    font-family: $baseff
+    font-weight: 400
+    font-size: $basefz
+    min-height: 100%
+    background-color: bg-color(main)
+    color: text-color(dark)
+
+body
+    display: flex
+    flex-direction: column
+    min-width: $xs
+    
+    & > *
+        flex-shrink: 0
+        min-width: $xs
+        box-sizing: border-box
+
+@import './container.sass'
+@import './btn.sass'
+@import './field.sass'
+@import './error.sass'
+@import './content.sass'
+@import './typography.sass'
+@import '../components/mobile/mobile.sass'

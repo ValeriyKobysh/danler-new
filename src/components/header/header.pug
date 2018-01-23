@@ -1,0 +1,38 @@
+mixin phoneItem()
+    li.header__phone
+        a.header__phone-link.link(href="tel: +380937008000") +38(093)700-80-00
+
+header.header#header
+        
+        button.header__mobile.header__btn(@click="toggleMobile")
+            span(:class="{ active: dialogs.mobile }")
+
+        .header__buttons
+            .header__phone-wrap
+                a.header__btn(@click="toggleShow('phones')" href="javascript:;" :class="{ active: dialogs.phones }")
+                    img.header__btn-icon(src=require('../../assets/image/icons/phone.svg'), alt="" height="30")
+
+                ul.header__phones(:class="{ show: dialogs.phones }")
+                    - for (var x = 0; x < 3; x++)
+                        +phoneItem()
+
+            .header__location-wrap
+                a.header__btn(@click="toggleShow('locations')" href="javascript:;" :class="{ active: dialogs.locations }")
+                    img.header__btn-icon(src=require('../../assets/image/icons/location.svg'), alt="" height="30")
+
+                ul.header__locations.list(:class="{ show: dialogs.locations}")
+                    li.header__location г. Чернигов, ул. Инструментальная, 7
+
+            .header__search-wrap
+                a.header__btn(href="javascript:;" @click="toggleShow('search')" :class="{ active: dialogs.search }")
+                    img(src=require("../../assets/image/icons/search.svg"), alt="" height="30")
+
+                search.header__search(:class="{ show: dialogs.search }")
+
+            .header__basket-wrap
+                a.header__btn.link(@click="toggleShow('basket')" href="javascript:;" :class="{ active: dialogs.basket }")
+                    img.header__btn-icon.header__btn-icon_basket(src=require('../../assets/image/icons/store.svg'), alt="" height="30")
+                    span.text (0)
+
+                basket.header__basket(:class="{ show: dialogs.basket }")
+

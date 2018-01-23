@@ -1,0 +1,62 @@
+.search
+
+    &__heading
+        font-size: rem(20px)
+        line-height: rem(22px)
+        margin-bottom: 30px
+        color: text-color(light)
+
+    &__list, &__field
+        width: 100%
+
+    &__item
+        margin-bottom: 15px
+        min-height: 45px
+        height: auto
+        position: relative
+        color: text-color(light)
+        +transition()
+        fill: bg-color(white)
+
+        &:last-child
+            margin-bottom: 30px
+
+        &.active, &:hover
+            fill: bg-color(accent)
+
+    &__title
+        +alignment($jc: between)
+        cursor: pointer
+        height: 45px
+        user-select: none
+
+        svg
+            transform: rotate(90deg)
+
+    &__drop
+
+        &-list
+            position: absolute
+            top: calc(100% - 2px)
+            left: -1px
+            width: calc(100% + 2px)
+            padding: 0 15px
+            background-color: bg-color(main-light)
+            border-radius: 0 0 $radius $radius
+            border: 1px solid bg-color(accent)
+            border-top: 0
+            z-index: 10
+
+        &-item
+            display: flex
+            margin-bottom: 15px
+
+    &__select
+        width: 100%
+
+    &__btn
+        width: 100%
+        text-align: center
+        justify-content: center
+        align-items: center
+

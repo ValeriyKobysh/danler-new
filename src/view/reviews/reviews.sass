@@ -1,0 +1,190 @@
+@import '../../style/default.sass'
+@import '../../components/sidebar/sidebar.sass'
+@import '../../components/header/header.sass'
+@import '../../components/basket/basket.sass'
+@import '../../components/dialog/dialog.sass'
+@import '../../components/search/search.sass'
+@import '../../components/breadcrumbs/breadcrumbs.sass'
+@import '../../components/pagination/pagination.sass'
+@import '../../components/footer/footer.sass'
+@import '../../components/social/social.sass'
+@import '../../components/dialog/callback.sass'
+@import '../../components/submenu/submenu.sass'
+
+.reviews
+    border: 0
+    position: relative
+
+    &__content
+        background-color: bg-color(main-light)
+        border-radius: $radius
+        height: 100%
+
+    &__add
+        align-items: center
+        justify-content: center
+        width: 200px
+        margin: 0 0 30px auto
+        color: text-color(dark)
+        fill: text-color(dark)
+        font-size: rem(14px)
+
+        &-icon
+            height: 50%
+            margin-right: 10px
+
+    &__add-wrap
+        position: relative
+
+    &__item
+        display: flex
+        border: 1px solid bg-color(main)
+        border-radius: $radius
+        padding: 15px
+        margin-bottom: 30px
+        color: text-color(light)
+
+    &__left
+        display: flex
+
+    &__avatar
+        +size(100px)
+        display: inline-flex
+        border-radius: 50%
+        overflow: hidden
+        flex-shrink: 0
+
+        & > img
+            width: 100%
+
+    &__wrap
+
+        & > * 
+            display: block
+            line-height: 1.5
+            
+    &__name
+        font-weight: 700
+
+    // &__link
+    //     color: text-color(light)
+    //     text-decoration: underline
+    //     +transition()
+
+    //     &:hover, &:active
+    //         color: text-color(medium)
+
+    &__text, &__title
+        line-height: 1.5
+
+    &__form
+        background-color: bg-color(main-light)
+        border-radius: 5px
+        border: 1px solid bg-color(accent)
+        padding: 15px
+        max-width: 600px
+        width: 100%
+        display: flex
+        flex-direction: column
+        align-items: center
+        position: absolute
+        z-index: 20
+        right: 0
+        top: calc(100% + 20px)
+
+        &:before
+            content: ''
+            display: flex
+            +size(20px)
+            position: absolute
+            top: -11.5px
+            right: 30px
+            transform: rotate(45deg)
+            border-left: 1px solid bg-color(accent)
+            border-top: 1px solid bg-color(accent)
+            background-color: bg-color(main-light)
+
+        .reviews__avatar
+            margin-bottom: 30px
+            margin-right: 0
+
+        input[type="file"]
+            display: none
+
+    &__group, &__field, &__area, &__submit
+        width: 100%
+
+    &__group
+        margin-bottom: 30px
+
+        &_rating
+            text-align: center
+            color: text-color(light)
+
+    &__submit
+        color: text-color(dark)
+        align-items: center
+        justify-content: center
+
+    &__rating
+        display: flex
+        align-items: center
+
+    &__rating-list
+        +alignment()
+        padding: 15px 0
+
+    &__rating-item
+        margin-right: 5px
+        cursor: pointer
+
+        &:last-child
+            margin-right: 0
+
+        svg
+            height: 20px
+            fill: bg-color(white)
+            stroke-width: 3px
+            stroke: bg-color(main-light)
+            +transition()
+
+        &.active, &.hover
+
+            svg
+                fill: bg-color(accent)
+
++media-breakpoint-up(breakpoints(md))
+    .reviews
+
+        &__left, &__avatar
+            margin-right: 20px
+
+        &__wrap
+            width: 175px
+
++media-breakpoint-up(breakpoints(sm))
+    .reviews
+
+        &__content
+            padding: 30px
+
++media-breakpoint-down(breakpoints(md))
+    .reviews
+
+        &__item, &__left
+            flex-direction: column
+
+        &__left
+            align-items: center
+
+        &__avatar, &__wrap
+            margin-bottom: 30px
+
+        &__wrap
+            text-align: center
+
++media-breakpoint-down(breakpoints(sm))
+    .reviews
+
+        &__content
+            padding: 30px 15px

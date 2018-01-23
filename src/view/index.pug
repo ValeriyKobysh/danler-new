@@ -1,0 +1,27 @@
+
+block variables
+    //- - var title = ''
+
+
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title #{title}
+    body
+        
+        .wrapper
+
+            include ../components/sidebar/sidebar
+
+            .content
+                include ../components/header/header
+
+                include ../components/submenu/submenu
+        
+                block content
+
+        include ../components/footer/footer

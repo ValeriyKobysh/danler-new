@@ -1,0 +1,357 @@
+@import '../../style/default.sass'
+@import '../../components/header/header.sass'
+@import '../../components/basket/basket.sass'
+@import '../../components/dialog/dialog.sass'
+@import '../../components/search/search.sass'
+@import '../../components/sidebar/sidebar.sass'
+@import '../../components/breadcrumbs/breadcrumbs.sass'
+@import '../../components/social/social.sass'
+@import '../../components/footer/footer.sass'
+@import '../../components/dialog/callback.sass'
+@import '../../components/submenu/submenu.sass'
+
+.card
+
+    &__content
+        background-color: bg-color(main-light)
+        border-radius: $radius
+        height: 100%
+        color: text-color(light)
+
+    &__carousel
+        flex-grow: 2
+        margin-right: 30px
+        flex-shrink: 0
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        align-content: flex-start
+
+    &__info
+        display: flex
+        margin-bottom: 30px
+
+        &-item
+            width: calc(100% / 5 - 10px)
+            cursor: pointer
+
+            &:first-child
+                +size(100%, auto)
+                margin-bottom: 10px
+
+            img
+                +size(100%)
+
+    &__product
+        position: relative
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+
+        &-items
+            margin-bottom: 25px
+
+        &-item
+            color: text-color(light)
+            +alignment($jc: between)
+            padding-bottom: 15px
+            margin-bottom: 15px
+            border-bottom: 1px solid bg-color(accent)
+
+        &-value.true
+            color: text-color(access)
+
+        &-value.false
+            color: text-color(error)
+
+    &__btns
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        position: relative
+
+    &__buy, &__callback
+        align-items: center
+        justify-content: center
+
+    &__buy
+        color: text-color(dark)
+        margin-bottom: 15px
+        width: 100%
+
+        img
+            margin-right: 10px
+
+    &__callback
+        width: calc(50% - 15px)
+        color: text-color(hover)
+        font-size: rem(16px)
+
+        &.active
+            background-color: bg-color(main-light)
+
+    &__phones-wrap
+        position: relative
+
+    &__phones
+        position: absolute
+        top: calc(100% + 15px)
+        left: 0
+        width: 100%
+        background-color: bg-color(main-light)
+        border-radius: 5px
+        padding: 15px
+
+        &:before
+            content: ''
+            display: flex
+            +size(20px)
+            position: absolute
+            top: -10px
+            transform: rotate(45deg)
+            right: 30px
+            background-color: bg-color(main-light)
+
+    &__phone
+        margin-bottom: 15px
+
+        &:last-child
+            margin-bottom: 0
+
+        *
+            color: text-color(light)
+            +transition()
+
+        &:hover *, &:active *
+            color: text-color(hover)
+
+    &__about
+        color: text-color(light)
+
+        &-desc, &-heading
+            margin-bottom: 15px
+
+        &-heading
+            font-weight: 700
+            display: inline-flex
+
+        &-item
+            display: flex
+            align-items: center
+            padding: 0 15px
+            height: 45px
+            // border-bottom: 1px solid bg-color(accent)
+            background-color: bg-color(main)
+            border-radius: $radius
+            margin-bottom: 15px
+
+            &:last-child
+                margin-bottom: 0
+
+        &-title
+            width: 150px
+            margin-right: 15px
+            flex-shrink: 0
+
+    &__tabs
+        display: flex
+
+    &__tab
+        margin-bottom: 15px
+        padding: 0 15px
+        min-width: 165px
+        height: 45px
+        +alignment()
+        cursor: pointer
+
+    &__tab-content
+        color: text-color(light)
+        font-size: rem(16px)
+        line-height: rem(22px)
+        border: 1px solid bg-color(main)
+        padding: 15px
+        border-radius: $radius
+
+    &__inputs
+        display: flex
+
+    &__form-group
+        position: relative
+
+    &__input, &__area
+        width: 100%
+
+    &__send
+        justify-content: center
+        align-items: center
+        margin-left: auto
+        max-width: $xs - 30
+
+    &__contents
+        margin-bottom: 30px
+
+    &__analog
+
+        &-heading
+            font-size: rem(20px)
+            font-weight: 700
+            margin-bottom: 30px
+            color: text-color(light)
+
+        &-list
+            display: flex
+            flex-wrap: wrap
+
+        &-item
+            padding: 15px
+            border-radius: $radius
+            border: 1px solid bg-color(main)
+            +transition()
+
+            &:hover
+                border-color: bg-color(accent)
+
+        &-image
+            display: block
+            margin-bottom: 15px
+
+            img
+                +size(100%)
+
+        &-title
+            font-size: rem(16px)
+            line-height: rem(20px)
+            height: 40px
+            overflow: hidden
+            margin-bottom: 30px
+            display: inline-flex
+            color: text-color(light)
+
+        &-link
+            align-items: center
+            justify-content: center
+            color: text-color(light)
+
+
++media-breakpoint-up(breakpoints(xl))
+    .card
+
+        &__analog
+    
+            &-list
+                justify-content: space-between
+
+            &-item
+                width: calc(100% / 3 - 15px)
+
++media-breakpoint-up(breakpoints(md))
+    .card
+
+        &__heading
+            font-size: rem(20px)
+            line-height: rem(26px)
+            height: 52px
+
+        &__tab
+            margin-right: 15px
+
+            &:last-child
+                margin-right: 0
+
+            &.active, &:hover, &:active
+                border-bottom-color: bg-color(main-light)
+
+        &__inputs
+            justify-content: space-between
+            margin-bottom: 30px
+
+        &__input-wrap
+            width: calc(100% / 3 - 15px)
+
+        &__area
+            margin-bottom: 30px
+
++media-breakpoint-up(breakpoints(sm))
+    .card
+
+        &__content
+            padding: 30px
+
+        &__carousel, &__product
+            width: calc(50% - 15px)
+
++media-breakpoint-between(breakpoints(md), breakpoints(xl))
+    .card
+
+        &__analog
+        
+            &-item
+                width: calc(100% / 2 - 15px)
+                margin-bottom: 30px
+
+                &:nth-child(odd)
+                    margin-right: 30px
+
++media-breakpoint-between(breakpoints(sm), breakpoints(md))
+    .card
+
+        &__analog
+        
+            &-item
+                width: calc(100% / 2 - 15px)
+                margin-bottom: 30px
+
+                &:nth-child(odd)
+                    margin-right: 15px
+
++media-breakpoint-down(breakpoints(lg))
+    .card
+
+        &__content
+            border-radius: 0 0 5px 5px
+
++media-breakpoint-down(breakpoints(md))
+    .card
+
+        &__product
+
+            &-items
+                font-size: rem(14px)
+
+        &__tabs
+            flex-direction: column
+
+        &__tab
+            width: 100%
+
+        &__inputs
+            flex-direction: column
+
+        &__input-wrap
+            width: 100%
+
+        &__form-group
+            margin-bottom: 30px
+
++media-breakpoint-down(breakpoints(sm))
+    .card
+
+        &__content
+            padding: 30px 15px
+
+        &__info
+            flex-wrap: wrap
+
+        &__carousel, &__product
+            width: 100%
+
+        &__carousel
+            margin-bottom: 10px
+
+        &__analog
+        
+            &-item
+                width: 100%
+                margin-bottom: 30px
+
+

@@ -1,0 +1,180 @@
+.header
+    width: 100%
+    background-color: bg-color(main-light)
+    +alignment($jc: between)
+
+    &__buttons
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: flex-end
+
+    &__phones, &__locations, &__basket, &__search
+
+        &.show
+            display: flex
+            flex-direction: column
+            position: absolute
+            top: calc(100% + 20px)
+            width: $xs - 30
+            background-color: bg-color(main-light)
+            border-radius: 5px
+            border: 1px solid bg-color(accent)
+
+            &:before
+                content: ''
+                display: flex
+                +size(20px)
+                background-color: bg-color(main-light)
+                transform: rotate(45deg)
+                position: absolute
+                top: -11px
+                right: 40px
+                border-top: 1px solid bg-color(accent)
+                border-left: 1px solid bg-color(accent)
+
+    &__phones, &__locations, &__basket, &__search
+        align-items: center
+        z-index: 100
+        display: none
+        padding: 15px
+
+    &__phone, &__location
+        width: 100%
+        margin-bottom: 15px
+        display: flex
+        color: text-color(light)
+        font-size: rem(16px)
+        line-height: rem(22px)
+
+        &:last-child
+            margin-bottom: 0
+
+    &__phone-link
+        color: text-color(light)
+        +transition(color)
+
+        &:hover, &:active
+            color: text-color(hover)
+
+    &__btn
+        +alignment()
+        color: text-color(light)
+        background-color: bg-color(main-light)
+        cursor: pointer
+        +transition()
+
+        &.active, &:hover
+            background-color: bg-color(main)
+
+    &__mobile
+        border: 0
+        background-color: transparent
+        outline: none
+        cursor: pointer
+        position: relative
+        z-index: 1000
+
+        & > span, & > span:before, & > span:after
+            display: block
+            +size(40px, 3px)
+
+        & > span
+            position: relative
+            background-color: rgba(bg-color(accent), 1)
+            transition: all 0ms 300ms
+
+            &.active
+                background-color: rgba(bg-color(accent), 0)
+
+                &:before
+                    bottom: 0
+                    transform: rotate(-45deg)
+                    transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+
+                &:after
+                    top: 0
+                    transform: rotate(45deg)
+                    transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+        & > span:before, & > span:after
+            content: ""
+            position: absolute
+            left: 0
+            background-color: rgba(bg-color(accent), 1)
+        & > span:before
+            bottom: 12px
+            transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+        & > span:after
+            top: 12px
+            transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+
++media-breakpoint-up(breakpoints(xl))
+    .header
+        padding: 0 60px
+
++media-breakpoint-up(breakpoints(bsxl))
+    .header
+        height: 100px
+        
+        &__mobile
+            display: none
+
+        &__phone-wrap, &__location-wrap, &__basket-wrap, &__search-wrap
+            margin-left: 15px
+
+        &__btn
+            +size(100px)
+
++media-breakpoint-up(breakpoints(sm))
+    .header
+
+        &__phone-wrap, &__location-wrap, &__basket-wrap, &__search-wrap
+            position: relative
+
+        &__phones, &__locations, &__basket, &__search
+
+            &.show
+                right: 0
+
+        &__btn-icon
+            margin-right: 10px
+
++media-breakpoint-between(breakpoints(lg), breakpoints(xl))
+    .header
+
+        &__nav
+
+            .menu__link
+                font-size: rem(16px)
+
+        &__logo
+
+            img
+                +size(150px, auto)
+                margin-bottom: 5px
+
+        &__callback
+            width: 180px
+
++media-breakpoint-between(breakpoints(sm), breakpoints(xl))
+    .header
+        padding: 0 30px
+
++media-breakpoint-down(breakpoints(bsxl))
+    .header
+        height: 66px
+        &__btn
+            +size(66px)
+
+            .text
+                display: none
+
++media-breakpoint-down(breakpoints(sm))
+    .header
+        padding: 0 15px
+        position: relative
+
+        &__phones, &__locations, &__basket, &__search
+
+            &.show
+                right: 15px

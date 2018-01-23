@@ -1,0 +1,172 @@
+.footer
+    background-color: bg-color(main-light)
+    width: 100%
+
+    &__container
+        height: 100%
+        +alignment($jc: start)
+        margin-left: auto
+
+    &__copyright
+        flex-shrink: 0
+        flex-grow: 1
+        font-size: rem(14px)
+        line-height: rem(20px)
+        color: text-color(light)
+
+    &__nav
+        flex-grow: 2
+    
+        &-link
+            color: text-color(light)
+            font-size: rem(14px)
+            +transition()
+
+            &:hover, &:active
+                color: text-color(hover)
+
+    &__social
+        width: calc(25% - 30px)
+        flex-shrink: 0
+
+        &-list
+            +alignment($jc: end)
+
+        &-link
+            +alignment()
+            +size(45px)
+            border-radius: 5px
+            +transition()
+
+            svg
+                height: 50%
+                +transition()
+
+            &_vk
+                border: 1px solid map-get($social-color, vk)
+
+                &:hover, &:active
+                    border: 1px solid lighten(map-get($social-color, vk), 10%)
+
+                    svg
+                        fill: lighten(map-get($social-color, vk), 10%)
+
+                svg
+                    fill: map-get($social-color, vk)
+
+            &_gp
+                border: 1px solid map-get($social-color, google-plus)
+
+                &:hover, &:active
+                    border: 1px solid lighten(map-get($social-color, google-plus), 10%)
+
+                    svg
+                        fill: lighten(map-get($social-color, google-plus), 10%)
+
+                svg
+                    fill: map-get($social-color, google-plus)
+
+            &_fb
+                border: 1px solid map-get($social-color, facebook)
+
+                &:hover, &:active
+                    border: 1px solid lighten(map-get($social-color, facebook), 10%)
+
+                    svg
+                        fill: lighten(map-get($social-color, facebook), 10%)
+
+                svg
+                    fill: map-get($social-color, facebook)
+
++media-breakpoint-up(breakpoints(xl))
+    .footer
+        height: 125px
+
++media-breakpoint-up(breakpoints(bsxl))
+    .footer
+
+        &__container
+            width: calc(100% - 360px)
+            padding: 0 60px
+
++media-breakpoint-up(breakpoints(sm))
+    .footer
+
+        &__social
+
+            &-item
+                margin-left: 15px
+
+                &:first-child
+                    margin-left: 0
+
+        &__nav
+
+            &-list
+                +alignment($jc: between)
+
++media-breakpoint-between(breakpoints(sm), breakpoints(xl))
+    .footer
+
+        &__container
+            padding: 30px
+            flex-wrap: wrap
+
+        &__copyright, &__social
+            order: 1
+            width: 50%
+
+        &__nav
+            width: 100%
+            margin-bottom: 30px
+
++media-breakpoint-down(breakpoints(xl))
+    .footer
+
+        &__container
+            // padding: 30px
+
++media-breakpoint-down(breakpoints(bsxl))
+    .footer
+
+        &__container
+            width: 100%
+
++media-breakpoint-down(breakpoints(sm))
+    .footer
+
+        &__container
+            padding: 30px 15px
+            flex-wrap: wrap
+
+        &__copyright
+            order: 1
+            width: 100%
+            text-align: center
+            padding-top: 30px
+
+        &__nav
+            width: 50%
+
+            &-item
+                text-align: center
+                margin-bottom: 15px
+
+                &:last-child
+                    margin-bottom: 0
+
+        &__social
+            width: 50%
+
+            &-list
+                flex-direction: column
+
+            &-item
+                margin-bottom: 15px
+
+                &:last-child
+                    margin-bottom: 0
+
+
+
+

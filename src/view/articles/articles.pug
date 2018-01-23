@@ -1,0 +1,44 @@
+extends ../index
+
+block variables
+    - var title = 'Статьи'
+
+block content
+    
+    main.articles#articles
+        .articles__container.container.content__container
+            include ../../components/breadcrumbs/breadcrumbs
+
+            h1.articles__heading.heading Статьи
+
+            section.articles__content
+
+                ul.articles__list.list
+                    - for (var i = 0; i < 5; i++)
+                        li.articles__item
+                            a.articles__image(href="javascript:;")
+                                img(src=require("../../assets/image/articles/article-image.png"))
+
+                            span.articles__title Особенности Mercedes Vito (1996-2003)
+
+                            span.articles__date
+                                img(src=require("../../assets/image/icons/icon-calendar.svg"), alt="")
+                                | Январь, 17, 2017
+
+                            p.articles__preview Специализированная разборка спринтер (Mercedes Sprinter) от компании Danler – это качественный десятилетний труд профессиональной команды.
+
+                            a.articles__btn.btn.btn_accent.link(href="article.html") Читать дальше
+
+                include ../../components/pagination/pagination
+            
+                social
+
+                callback
+
+//- block main_content
+//-     section.section.section_full.section-article
+//-         h1.section__heading Статья
+//-         ul.section-article-list
+//-             - for (var i = 0; i < 1; i++)
+//-                 +articles()
+//-         include ../_blocks/_pagination/_pagination
