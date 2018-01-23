@@ -110,7 +110,7 @@
 </aside>
       <div class="content">
         <header class="header" id="header">
-          <button class="header__mobile header__btn" @click="toggleMobile"><span :class="{ active: dialogs.mobile }"></span></button>
+          <button class="header__mobile header__btn" @click="toggleShow('mobile')"><span :class="{ active: dialogs.mobile }"></span></button>
           <div class="header__buttons">
             <div class="header__phone-wrap"><a class="header__btn" @click="toggleShow('phones')" href="javascript:;" :class="{ active: dialogs.phones }"><img class="header__btn-icon" src="image/phone.svg" alt="" height="30"></a>
               <ul class="header__phones" :class="{ show: dialogs.phones }">
