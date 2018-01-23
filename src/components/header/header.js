@@ -34,10 +34,6 @@ let header = new Vue({
             for (const key in this.dialogs) {
                 key !== prop ? this.dialogs[key] = false : this.dialogs[key] = !this.dialogs[key];
             }
-        },
-        toggleMobile(){
-            this.toggleShow('mobile');
-            sidebar.slideShow();
         }
     },
     created(){
@@ -61,7 +57,7 @@ let header = new Vue({
     },
     watch: {
         'dialogs.mobile'(val){
-            if(!val) sidebar.slideShow();
+            sidebar.slideShow()
         }
     }
 })

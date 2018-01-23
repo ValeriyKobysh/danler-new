@@ -71,6 +71,9 @@
             z-index: 10
             background-color: bg-color(main-light)
 
+        &_grid
+            justify-content: flex-end
+
         &-item
             margin-bottom: 15px
             +transition()
@@ -192,7 +195,6 @@
     &__btn-about
         font-size: rem(14px)
 
-
 +media-breakpoint-up(breakpoints(xl))
     .products
 
@@ -299,6 +301,19 @@
                     &__btn-wrap
                         margin-left: auto
 
++media-breakpoint-between(breakpoints(sm), breakpoints(md))
+    .products
+
+        &__list
+
+            &.block
+
+                .products
+                    
+                    &__item
+                        width: calc(100% / 2 - 15px)
+                        margin: 0 7.5px 30px
+
 +media-breakpoint-down(breakpoints(xl))
     .products
 
@@ -335,13 +350,7 @@
 
         &__list
 
-            &.block
 
-                .products
-                    
-                    &__item
-                        width: calc(100% / 2 - 15px)
-                        margin: 0 7.5px 30px
 
             &.inline
 

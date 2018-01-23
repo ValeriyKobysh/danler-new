@@ -27,7 +27,6 @@
         border: 1px solid bg-color(main)
         border-radius: $radius
         padding: 15px
-        margin: 0 15px 30px
         min-width: $xs - 60
         flex-grow: 1
         +transition()
@@ -64,6 +63,9 @@
         &__content
             padding: 30px
 
+        &__item
+            margin: 0 15px 30px
+
 +media-breakpoint-down(breakpoints(xl))
     .category
 
@@ -75,3 +77,6 @@
 
         &__content
             padding: 30px 15px
+
+        &__item
+            margin: 0 0 30px

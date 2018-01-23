@@ -4,7 +4,7 @@ mixin phoneItem()
 
 header.header#header
         
-        button.header__mobile.header__btn(@click="toggleMobile")
+        button.header__mobile.header__btn(@click="toggleShow('mobile')")
             span(:class="{ active: dialogs.mobile }")
 
         .header__buttons

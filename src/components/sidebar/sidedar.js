@@ -28,6 +28,7 @@ let sidebar = new Vue({
             }
         },
         slideShow(){
+            console.log(this.mobileShow);
             this.mobileShow = !this.mobileShow
         }
     },
