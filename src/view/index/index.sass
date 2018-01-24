@@ -28,7 +28,7 @@
 
     &__slider
         width: 100%
-        height: calc(100vh - 220px)
+        // height: calc(100vh - 220px)
         border-radius: 5px
         overflow: hidden
         outline: none
@@ -36,8 +36,8 @@
         margin-bottom: 60px
         overflow: hidden
 
-        img
-            height: 100%
+        .flickity-viewport
+            // height: 100%!important
 
         .flickity-page-dots
             position: absolute
@@ -85,10 +85,15 @@
 
     &__slide
         width: 100%
+        min-height: 300px
         position: relative
 
         &-image
-            +size(100%)
+            width: 100%
+            height: 100%
+
+            img
+                +size(100%)
 
         &-text
             display: flex
@@ -100,7 +105,7 @@
             left: 0
             background-color: rgba(bg-color(main-light), .7)
             text-align: center
-
+            z-index: 10
 
             .custom.char.typed
                 color: text-color(light)
@@ -110,12 +115,13 @@
 
     &__review
         margin-bottom: 30px
+        
 
         &-wrap
             padding-left: 15px
 
         &-list
-            padding: 30px 15px
+            
             width: 100%
             overflow: hidden
             outline: none
@@ -266,6 +272,12 @@
         &__container
             padding: 60px
 
++media-breakpoint-up(breakpoints(bsxl))
+    .index
+
+        &__slide
+            height: calc(100vh - 220px)
+
 +media-breakpoint-up(breakpoints(md))
     .index
 
@@ -332,6 +344,12 @@
 
         &__container
             padding: 30px
+
++media-breakpoint-down(breakpoints(bsxl))
+    .index
+
+        &__slide
+            height: calc(100vh - 126px)
 
 +media-breakpoint-down(breakpoints(lg))
     .index

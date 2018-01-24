@@ -4,7 +4,7 @@
     height: 100%
     top: 0
     left: 0
-    +alignment()
+    +alignment($ai: start)
     z-index: 1000
 
     &__overlay
@@ -15,12 +15,14 @@
         background-color: rgba(bg-color(main), .5)
 
     &__container
-        background-color: bg-color(white)
-        padding: 10px
+        width: $xs - 30
+        background-color: bg-color(main-light)
+        padding: 15px
         box-sizing: border-box
         position: relative
         z-index: 1001
-        border-radius: 5px
+        border-radius: $radius
+        border: 1px solid bg-color(accent)
 
         &.carousel
             +size(90%)
@@ -46,14 +48,14 @@
             position: absolute
             right: 12px
             top: 0
-            +size(1px, 25px)
-            background-color: bg-color(main-light)
+            +size(2px, 25px)
+            background-color: bg-color(red)
             display: block
             transform: rotate(45deg)
             +transition()
 
         &:hover::after, &:hover::before
-            background-color: bg-color(grey-dark)
+            background-color: bg-color(accent)
 
         &::before
             transform: rotate(-45deg)
@@ -76,32 +78,19 @@
         font-size: rem(16px)
         font-weight: 400
         line-height: rem(24px)
-        color: text-color(dark)
+        color: text-color(light)
 
     &__group
         position: relative
+        margin-bottom: 15px
 
     &__field
         width: 100%
 
     &__btn
         width: 100%
-        height: 45px
-        color: text-color(dark)
-        text-transform: uppercase
-        font-weight: 700
-        font-size: rem(16px)
-        display: block
-        background-color: bg-color(accent)
-        border: 0
-        border-radius: 5px
-        outline: none
-        cursor: pointer
-        font-family: $baseff
-        +transition()
-
-        &:hover, &:active
-            background-color: bg-color(accent-light)
+        text-align: center
+        justify-content: center
 
     //Carousel dialog 
     .carousel-3d-controls
@@ -196,11 +185,8 @@
 +media-breakpoint-up(breakpoints(lg))
     .dialog
 
-        &__title, &__group
-            margin: 0 auto 40px
-
-        &__container.callback
-            max-width: 500px
+        &__title
+            margin: 0 auto 30px
 
         &__basket-submit-wrap
             justify-content: space-between
@@ -211,31 +197,13 @@
 +media-breakpoint-down(breakpoints(lg))
     .dialog
 
-        &.callback, &.add-to-basket
-            position: absolute
-            min-width: $xs - 60
-            width: 100%
-            height: auto
-            right: 0
-            left: auto
-            min-width: $xs - 60
-
-        &.callback
-            top: calc(100% + 15px)
-
         &.add-to-basket
             top: 60px
-
-        &__overlay.desktop
-            display: none
-
-        &__title, &__group
-            margin: 0 auto 15px
 
         &__group_last
             margin-bottom: 25px
 
-        &__container.callback, &__container.add-to-basket
+        &__container.add-to-basket
             width: 100%
             border: 1px solid bg-color(accent)
             position: relative

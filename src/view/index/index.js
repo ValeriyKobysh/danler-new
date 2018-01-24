@@ -4,9 +4,9 @@ import Vue from '../../../node_modules/vue/dist/vue';
 import header from '../../components/header/header';
 import sidebar from '../../components/sidebar/sidedar';
 import Basket from '../../components/basket/basket';
-import callbackComponent from '../../components/dialog/callback/callback';
 import socialComponent from '../../components/social/social'
 // import Search from '../../components/search/search';
+import Callback from '../../components/dialog/callback.vue'
 import Flickity from 'vue-flickity';
 import { VueTyper } from 'vue-typer';
 
@@ -78,7 +78,7 @@ let index = new Vue({
         },
     },
     components: {
-        Flickity, VueTyper, socialComponent
+        Flickity, VueTyper, socialComponent, Callback
     },
     created(){
         const tabs = document.querySelector('.last-products__content-list').children.length

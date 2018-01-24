@@ -158,19 +158,19 @@
                 <div class="index__slide-text">
                   <vue-typer class="accent" text="Случилась неожиданная поломка?" :repeat="0" @typed="onTyped(0)"></vue-typer>
                   <vue-typer v-if="typeds[0]" text="Решим проблему любого водителя!" :repeat="0"></vue-typer>
-                </div><img class="index__slide-image" src="http://via.placeholder.com/1920x1080">
+                </div><span class="index__slide-image"><img src="http://via.placeholder.com/1920x1080"></span>
               </div>
               <div class="index__slide">
                 <div class="index__slide-text">
                   <vue-typer class="accent" text="Случилась неожиданная поломка?" :repeat="0" @typed="onTyped(1)"></vue-typer>
                   <vue-typer v-if="typeds[1]" text="Решим проблему любого водителя!" :repeat="0"></vue-typer>
-                </div><img class="index__slide-image" src="http://via.placeholder.com/1920x1080">
+                </div><span class="index__slide-image"><img src="http://via.placeholder.com/1920x1080"></span>
               </div>
               <div class="index__slide">
                 <div class="index__slide-text">
                   <vue-typer class="accent" text="Случилась неожиданная поломка?" :repeat="0" @typed="onTyped(2)"></vue-typer>
                   <vue-typer v-if="typeds[2]" text="Решим проблему любого водителя!" :repeat="0"></vue-typer>
-                </div><img class="index__slide-image" src="http://via.placeholder.com/1920x1080">
+                </div><span class="index__slide-image"><img src="http://via.placeholder.com/1920x1080"></span>
               </div>
             </flickity>
             <h1 class="index__h1">РАЗБОРКА МИКРОАВТОБУСОВ</h1>
@@ -533,6 +533,7 @@
 <p>Обращайтесь к нам и Вы убедитесь в качестве запчастей с нашей разборки!</p>
               </div>
             </div>
+            <callback></callback>
           </div>
         </main>
       </div>
