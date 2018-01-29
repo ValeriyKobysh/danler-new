@@ -13,10 +13,13 @@
 .article
 
     &__content
-        background-color: bg-color(main-light)
+        background-color: bg-color(white)
         border-radius: $radius
         padding: 30px
         height: 100%
+
+        .text-block
+            color: text-color(dark)
 
 
     &__date
@@ -38,7 +41,7 @@
             text-transform: uppercase
             font-weight: 400
             margin-bottom: 30px
-            color: text-color(light)
+            color: text-color(dark)
 
         &-list
             +alignment()

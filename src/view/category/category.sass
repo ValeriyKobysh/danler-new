@@ -57,6 +57,12 @@
         &__item
             width: calc(100% / 4 - 30px)
 
++media-breakpoint-up(breakpoints(md))
+    .category
+
+        &__item
+            max-width: calc(50% - 30px)
+
 +media-breakpoint-up(breakpoints(sm))
     .category
 
@@ -70,7 +76,7 @@
     .category
 
         &__item
-            width: calc(100% / 2 - 30px)
+            width: calc(100% / 3 - 30px)
 
 +media-breakpoint-down(breakpoints(sm))
     .category

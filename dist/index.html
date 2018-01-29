@@ -283,9 +283,6 @@
                             </li>
               </ul><a class="last-products__all btn btn_accent link" href="products.html">Все запчасти</a>
             </div>
-<section class="video">
-  <iframe src="https://www.youtube.com/embed/ESXFanIvoNg" frameborder="0" allowfullscreen></iframe>
-</section>
             <section class="excellence">
               <h2 class="heading">Почему стоит обратиться именно к нам:</h2>
               <div class="excellence__list list">
@@ -323,7 +320,7 @@
             </section>
             <section class="index__review">
               <h2 class="heading">Отзывы о нас</h2>
-              <div class="index__review-wrap">
+              <div class="index__review-wrap"><a class="index__review-all link" href="javascript:;">Все отзывы</a>
                 <flickity class="index__review-list list" ref="flickity" :options="reviewtOptions">
                   <div class="index__review-item"><span class="index__review-avatar"><img src="image/user.svg" height="100" alt=""></span><span class="index__review-name">Иван Петрович, Chernigiv</span>
                     <ul class="index__review-rating list">
@@ -532,7 +529,8 @@
 </ol>
 <p>Обращайтесь к нам и Вы убедитесь в качестве запчастей с нашей разборки!</p>
               </div>
-            </div>
+            </div><br>
+            <social-component></social-component>
             <callback></callback>
           </div>
         </main>

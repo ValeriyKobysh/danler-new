@@ -30,7 +30,7 @@ block content
 
             include ../../components/last-products/last-products
 
-            include ../../components/video/video
+            //- include ../../components/video/video
 
             include ../../components/excellence/excellence
 
@@ -39,6 +39,8 @@ block content
                 h2.heading Отзывы о нас
 
                 .index__review-wrap
+
+                    a.index__review-all.link(href="javascript:;") Все отзывы
     
                     flickity.index__review-list.list(ref="flickity", :options="reviewtOptions")
                         -for(var k = 0; k < 5; k++)
@@ -120,5 +122,9 @@ block content
                     <p>Обращайтесь к нам и Вы убедитесь в качестве запчастей с нашей разборки!</p>
 
                 //- social-component
+
+            br 
+            
+            social-component
 
             callback

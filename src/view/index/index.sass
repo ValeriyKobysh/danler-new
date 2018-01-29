@@ -6,7 +6,7 @@
 @import '../../components/search/search.sass'
 @import '../../components/last-products/last-products.sass'
 @import '../../components/excellence/excellence.sass'
-@import '../../components/video/video.sass'
+// @import '../../components/video/video.sass'
 @import '../../components/social/social.sass'
 @import '../../components/footer/footer.sass'
 @import '../../components/dialog/callback.sass'
@@ -120,8 +120,15 @@
         &-wrap
             padding-left: 15px
 
+        &-all
+            color: text-color(hover)
+            font-size: rem(20px)
+            display: flex
+            justify-content: flex-end
+            margin-bottom: 30px
+
         &-list
-            
+            padding: 30px
             width: 100%
             overflow: hidden
             outline: none
@@ -262,18 +269,19 @@
         //     bottom: -40px
 
     &__text
-        background-color: bg-color(main-light)
+        // background-color: bg-color(main-light)
+        background-color: bg-color(white)
         border-radius: $radius
         padding: 30px 15px
+
+        .text-block
+            color: text-color(dark)!important
 
 +media-breakpoint-up(breakpoints(xl))
     .index
 
         &__container
             padding: 60px
-
-+media-breakpoint-up(breakpoints(bsxl))
-    .index
 
         &__slide
             height: calc(100vh - 220px)
@@ -338,6 +346,12 @@
                 // margin-right: 30px
 
 +media-breakpoint-between(breakpoints(lg), breakpoints(xl))
+
++media-breakpoint-between(breakpoints(bsxl), breakpoints(xl))
+    .index
+
+        &__slide
+            height: calc(100vh - 160px)
 
 +media-breakpoint-between(breakpoints(md), breakpoints(xl))
     .index

@@ -179,7 +179,6 @@
                       <!-- span.card__product-value.false Нет в наличии-->
                     </li>
                     <li class="card__product-item"><span class="card__product-title">Артикул:</span><span class="card__product-value">MS-1</span></li>
-                    <li class="card__product-item"><span class="card__product-title">ОЕ Номер</span><span class="card__product-value">13132111131131331</span></li>
                   </ul>
                   <div class="card__btns"><a class="card__buy btn btn_accent link" href="javascript:;" @click="addToBasket" id="455"><img src="image/add-to-card.svg" alt="" srcset="" height="22">Купить</a>
                     <add-to-basket v-if="addToBasketDialog" @close="showAddToBasket" :data="addToBasketData"></add-to-basket><a class="card__callback btn btn_dark" href="javascript:;" :class="{ active: callbackDialog }" @click="showCallbackDialog"><img src="image/phone.svg" alt="" height="22"></a><a class="card__callback btn btn_dark link" href="javascript:;" :class="{ active: phoneList }" @click="showPhoneList">380...</a>
@@ -210,6 +209,7 @@
                       <li class="card__about-item"><span class="card__about-title">Состояние</span><span class="card__about-value">Б/У</span></li>
                       <li class="card__about-item"><span class="card__about-title">Кузов</span><span class="card__about-value"></span></li>
                       <li class="card__about-item"><span class="card__about-title">Год выпуска</span><span class="card__about-value">1996-2006</span></li>
+                      <li class="card__about-item"><span class="card__about-title">ОЕ Номер</span><span class="card__about-value">13132111131131331</span></li>
                     </ul>
                   </li>
                   <li class="card__tab-content" v-show="tabs.write">

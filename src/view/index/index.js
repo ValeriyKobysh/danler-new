@@ -21,7 +21,8 @@ let index = new Vue({
             accessibility: true,
             prevNextButtons: true,
             pageDots: true,
-            wrapAround: true
+            wrapAround: true,
+            autoPlay: 5500
         },
         typeds: [],
         tabs: [],
@@ -30,7 +31,7 @@ let index = new Vue({
             accessibility: true,
             pageDots: true,
             prevNextButtons: false,
-            autoPlay: 3000
+            autoPlay: 5000
         },
         reviewtOptions: {
             initialIndex: 0,
