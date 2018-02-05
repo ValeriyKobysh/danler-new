@@ -4,7 +4,7 @@ let sidebar = new Vue({
     el: '#sidebar',
     data: {
         catalogDrop: true,
-        mobileShow: false
+        mobileShow: false,
     },
     methods: {
         dropDown(){
@@ -28,8 +28,20 @@ let sidebar = new Vue({
             }
         },
         slideShow(){
-            console.log(this.mobileShow);
             this.mobileShow = !this.mobileShow
+        },
+        hover(event, index){
+            this.category = !this.category
+            let submenuList = document.querySelectorAll('.submenu'),
+                chevronList = document.querySelectorAll('.sidebar__catalog-chevron')
+
+            submenuList.forEach((el, i) => {
+                i == index ? el.classList.toggle('active') : el.classList.remove('active');
+            });
+
+            chevronList.forEach((el, i) => {
+                i == index ? el.classList.toggle('active') : el.classList.remove('active');
+            })
         }
     },
     created(){

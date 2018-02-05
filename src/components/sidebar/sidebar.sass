@@ -1,7 +1,11 @@
 .sidebar
     flex-shrink: 0
     width: $xs
-    background-color: bg-color(main-light)
+    display: flex
+
+    &__left
+        width: $xs
+        background-color: bg-color(main-light)
 
     &__logo
         height: 100px
@@ -87,6 +91,9 @@
             background-color: bg-color(main)
             overflow: hidden
             margin-bottom: 15px
+            padding-right: 15px
+            display: flex
+            align-items: center
 
             &:last-child
                 margin-bottom: 0
@@ -96,14 +103,10 @@
                 .sidebar__catalog-link
                     color: text-color(hover)
 
-                .sidebar__catalog-chevron
-                    fill: bg-color(accent)
-
         &-link
             display: flex
             align-items: center
             color: text-color(light)
-            padding-right: 15px
             position: relative
             font-size: rem(16px)
             line-height: rem(24px)
@@ -122,7 +125,13 @@
             +transition()
             flex-shrink: 0
             margin-left: 15px
-            +transition()
+            cursor: pointer
+
+            &:hover, &.active
+                fill: bg-color(accent)
+
+            &.active
+                transform: rotate(90deg)
 
             svg
                 height: 20px
@@ -211,11 +220,13 @@
         position: absolute
         top: 66px
         left: -$xs
-        +transition()
         z-index: 100
 
         &.active
             left: 0
 
         &__logo
+            display: none
+
+        &__catalog-chevron
             display: none

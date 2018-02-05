@@ -20,8 +20,12 @@ html(lang="ru")
             .content
                 include ../components/header/header
 
-                include ../components/submenu/submenu
+                - for(var i = 0; i < 6; i++)
+                    include ../components/submenu/submenu
         
                 block content
 
         include ../components/footer/footer
+
+        - for(var k = 0; k < 6; k++)
+            include ../components/submenu/submenu

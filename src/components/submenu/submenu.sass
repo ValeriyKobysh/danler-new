@@ -1,9 +1,12 @@
 .submenu
     display: none
-    position: absolute
-    max-width: 1540px
+    width: 100%
     background-color: rgba(bg-color(main), .7)
-    z-index: 200
+
+    &.active
+        display: block
+        position: absolute
+        z-index: 100
 
     &__list
         display: flex
@@ -31,12 +34,18 @@
     &__img
         margin-bottom: 15px
 
++media-breakpoint-up(breakpoints(bsxl))
+    .submenu
+        top: 100px
+
 +media-breakpoint-up(breakpoints(lg))
     .submenu
-        width: calc(100vw - 380px)
         height: calc(100% - 100px)
+
++media-breakpoint-down(breakpoints(bsxl))
+    .submenu
+        display: none!important
 
 +media-breakpoint-down(breakpoints(lg))
     .submenu
-        width: 100%
         height: calc(100% - 60px)

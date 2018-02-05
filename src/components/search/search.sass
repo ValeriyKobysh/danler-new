@@ -14,15 +14,12 @@
         min-height: 45px
         height: auto
         position: relative
-        color: text-color(light)
+        color: text-color(dark)
         +transition()
-        fill: bg-color(white)
+        fill: bg-color(main-light)
 
         &:last-child
             margin-bottom: 30px
-
-        &.active, &:hover
-            fill: bg-color(accent)
 
     &__title
         +alignment($jc: between)
@@ -41,7 +38,7 @@
             left: -1px
             width: calc(100% + 2px)
             padding: 0 15px
-            background-color: bg-color(main-light)
+            background-color: bg-color(white)
             border-radius: 0 0 $radius $radius
             border: 1px solid bg-color(accent)
             border-top: 0
