@@ -87,6 +87,7 @@
         padding: 15px 0
 
         &-item
+            width: 100%
             border-radius: $radius
             background-color: bg-color(main)
             overflow: hidden
@@ -94,14 +95,18 @@
             padding-right: 15px
             display: flex
             align-items: center
+            +transition()
 
             &:last-child
                 margin-bottom: 0
 
             &:hover
+                width: calc(100% + 30px)
 
                 .sidebar__catalog-link
                     color: text-color(hover)
+
+            
 
         &-link
             display: flex
@@ -135,6 +140,26 @@
 
             svg
                 height: 20px
+
+    &__last
+
+        &-list
+            padding: 15px 0
+            width: 100%
+            position: relative
+            overflow: hidden
+
+        &-item
+            width: 100%
+        
+        &-link
+            display: block
+            border-radius: $radius
+            overflow: hidden
+            height: 225px
+
+            img
+                +size(100%)
 
     &__social
         margin-bottom: 30px

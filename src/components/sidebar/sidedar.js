@@ -1,10 +1,19 @@
 import Vue from '../../../node_modules/vue/dist/vue';
+import Flickity from 'vue-flickity';
 
 let sidebar = new Vue({
     el: '#sidebar',
     data: {
         catalogDrop: true,
         mobileShow: false,
+        flickityOptions: {
+            initialIndex: 0,
+            accessibility: true,
+            prevNextButtons: false,
+            pageDots: false,
+            wrapAround: false,
+            autoPlay: 3000
+        },
     },
     methods: {
         dropDown(){
@@ -32,6 +41,20 @@ let sidebar = new Vue({
         },
         hover(event, index){
             this.category = !this.category
+            let submenuList = document.querySelectorAll('.submenu');
+                // chevronList = document.querySelectorAll('.sidebar__catalog-chevron')
+
+            submenuList[index].classList.toggle('active')
+            // submenuList.forEach((el, i) => {
+            //     i == index ? el.classList.toggle('active') : el.classList.remove('active');
+            // });
+
+            // chevronList.forEach((el, i) => {
+            //     i == index ? el.classList.toggle('active') : el.classList.remove('active');
+            // })
+        },
+        click(){
+            this.category = !this.category
             let submenuList = document.querySelectorAll('.submenu'),
                 chevronList = document.querySelectorAll('.sidebar__catalog-chevron')
 
@@ -43,6 +66,9 @@ let sidebar = new Vue({
                 i == index ? el.classList.toggle('active') : el.classList.remove('active');
             })
         }
+    },
+    components: {
+        Flickity
     },
     created(){
 

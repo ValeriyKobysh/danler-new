@@ -1,11 +1,11 @@
 .submenu
     display: none
-    width: 100%
-    background-color: rgba(bg-color(main), .7)
+    width: calc(100% - 360px)
 
     &.active
         display: block
         position: absolute
+        left: 360px
         z-index: 100
 
     &__list
@@ -13,7 +13,8 @@
         flex-wrap: wrap
         max-width: 1440px
         margin: 0 auto
-        padding: 15px
+        padding: 30px 15px 0
+        background-color: rgba(bg-color(main), .7)
 
     &__item
         width: calc(100% / 4 - 30px)
@@ -25,8 +26,13 @@
         align-items: center
         background-color: bg-color(main-light)
         border-radius: $radius
+        border: 1px solid transparent
         padding: 15px
         color: text-color(light)
+        +transition()
+
+        &:hover
+            border-color: bg-color(accent)
 
         .mark
             font-weight: 700
@@ -40,7 +46,7 @@
 
 +media-breakpoint-up(breakpoints(lg))
     .submenu
-        height: calc(100% - 100px)
+        // height: calc(100% - 100px)
 
 +media-breakpoint-down(breakpoints(bsxl))
     .submenu
@@ -48,4 +54,4 @@
 
 +media-breakpoint-down(breakpoints(lg))
     .submenu
-        height: calc(100% - 60px)
+        // height: calc(100% - 60px)
