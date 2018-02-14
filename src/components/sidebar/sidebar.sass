@@ -245,10 +245,14 @@
 
 +media-breakpoint-down(breakpoints(bsxl))
     .sidebar
-        position: absolute
+        position: fixed
         top: 66px
+        bottom: 0
         left: -$xs
         z-index: 100
+        background-color: bg-color(main-light)
+        overflow-y: auto
+        +transition()
 
         &.active
             left: 0

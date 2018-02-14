@@ -241,20 +241,17 @@
         <header class="header" id="header">
           <button class="header__mobile header__btn" @click="toggleShow('mobile')"><span :class="{ active: dialogs.mobile }"></span></button>
           <div class="header__buttons">
-            <div class="header__phone-wrap"><a class="header__btn" @click="toggleShow('phones')" href="javascript:;" :class="{ active: dialogs.phones }"><img class="header__btn-icon" src="image/phone.svg" alt="" height="30"></a>
+            <div class="header__phone-wrap"><a @click="toggleShow('phones')" href="javascript:;" :class="{ active: dialogs.phones }"><img class="header__btn-icon" src="image/phone.svg" alt="" height="30"></a>
               <ul class="header__phones" :class="{ show: dialogs.phones }">
                         <li class="header__phone"><a class="header__phone-link link" href="tel: +380937008000">+38(093)700-80-00</a></li>
-                        <li class="header__phone"><a class="header__phone-link link" href="tel: +380937008000">+38(093)700-80-00</a></li>
-                        <li class="header__phone"><a class="header__phone-link link" href="tel: +380937008000">+38(093)700-80-00</a></li>
+                        <li class="header__phone"><a class="header__phone-link link" href="tel: +380977008070">+38(097)700-80-70 (viber)</a></li>
+                        <li class="header__phone"><a class="header__phone-link link" href="tel: +380992701500">+38(099)270-15-00</a></li>
               </ul>
             </div>
             <div class="header__location-wrap"><a class="header__btn" @click="toggleShow('locations')" href="javascript:;" :class="{ active: dialogs.locations }"><img class="header__btn-icon" src="image/location.svg" alt="" height="30"></a>
               <ul class="header__locations list" :class="{ show: dialogs.locations}">
                 <li class="header__location">г. Чернигов, ул. Инструментальная, 7</li>
               </ul>
-            </div>
-            <div class="header__search-wrap"><a class="header__btn" href="javascript:;" @click="toggleShow('search')" :class="{ active: dialogs.search }"><img src="image/search.svg" alt="" height="30"></a>
-              <search class="header__search" :class="{ show: dialogs.search }"></search>
             </div>
             <div class="header__basket-wrap"><a class="header__btn link" @click="toggleShow('basket')" href="javascript:;" :class="{ active: dialogs.basket }"><img class="header__btn-icon header__btn-icon_basket" src="image/store.svg" alt="" height="30"><span class="text">(0)</span></a>
               <basket class="header__basket" :class="{ show: dialogs.basket }"></basket>

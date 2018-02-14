@@ -3,7 +3,7 @@ import './order.sass'
 import header from '../../components/header/header';
 import Basket from '../../components/basket/basket';
 import callbackComponent from '../../components/dialog/callback/callback';
-import Search from '../../components/search/search';
+// import Search from '../../components/search/search';
 import mixin from '../../mixins/mixins'
 //#region import plugins
 import Vue from '../../../node_modules/vue/dist/vue';

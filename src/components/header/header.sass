@@ -7,9 +7,18 @@
         width: 100%
         display: flex
         align-items: center
-        justify-content: flex-end
+        // justify-content: flex-end
 
-    &__phones, &__locations, &__basket, &__search
+    &__phone-wrap
+        flex-grow: 1
+        display: flex
+        align-items: center
+
+    &__locations, &__basket, &__search //, &__phones
+        align-items: center
+        z-index: 100
+        display: none
+        padding: 15px
 
         &.show
             display: flex
@@ -33,13 +42,11 @@
                 border-top: 1px solid bg-color(accent)
                 border-left: 1px solid bg-color(accent)
 
-    &__phones, &__locations, &__basket, &__search
+    &__phones
+        display: flex
         align-items: center
-        z-index: 100
-        display: none
-        padding: 15px
 
-    &__phone, &__location
+    &__location //, &__phone
         width: 100%
         margin-bottom: 15px
         display: flex
@@ -49,6 +56,12 @@
 
         &:last-child
             margin-bottom: 0
+
+    &__phone
+        margin-right: 15px
+
+        &:last-child
+            margin-right: 0
 
     &__phone-link
         color: text-color(light)
@@ -125,19 +138,20 @@
         &__btn
             +size(100px)
 
++media-breakpoint-up(breakpoints(lg))
+    .header__phones
+        margin-left: 15px
+
 +media-breakpoint-up(breakpoints(sm))
     .header
 
         &__phone-wrap, &__location-wrap, &__basket-wrap, &__search-wrap
             position: relative
 
-        &__phones, &__locations, &__basket, &__search
+        &__locations, &__basket, &__search //,&__phones
 
             &.show
                 right: 0
-
-        &__btn-icon
-            margin-right: 10px
 
 +media-breakpoint-between(breakpoints(lg), breakpoints(xl))
     .header
@@ -163,11 +177,60 @@
 +media-breakpoint-down(breakpoints(bsxl))
     .header
         height: 66px
+
+        &__buttons
+            padding-left: 15px
+
         &__btn
             +size(66px)
 
             .text
                 display: none
+
++media-breakpoint-down(breakpoints(lg))
+    .header
+
+        &__phones
+            align-items: center
+            z-index: 100
+            display: none
+            padding: 15px
+
+            &.show
+                display: flex
+                flex-direction: column
+                position: absolute
+                top: calc(100% + 20px)
+                width: $xs - 30
+                background-color: bg-color(main-light)
+                border-radius: 5px
+                border: 1px solid bg-color(accent)
+
+                &:before
+                    content: ''
+                    display: flex
+                    +size(20px)
+                    background-color: bg-color(main-light)
+                    transform: rotate(45deg)
+                    position: absolute
+                    top: -11px
+                    left: 30px
+                    border-top: 1px solid bg-color(accent)
+                    border-left: 1px solid bg-color(accent)
+
+        &__phone-wrap > a
+            +alignment()
+            +size(66px)
+
+            &.active
+                background-color: bg-color(main)
+
+        &__phone
+            margin: 0 0 15px
+            width: 100%
+
+            &:last-child
+                margin: 0
 
 +media-breakpoint-down(breakpoints(sm))
     .header

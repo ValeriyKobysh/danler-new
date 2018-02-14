@@ -15,7 +15,7 @@ let header = new Vue({
             basket: false,
             phones: false,
             locations: false,
-            search: false,
+            // search: false,
             mobile: false
         },
         callback: false,
@@ -58,6 +58,7 @@ let header = new Vue({
     watch: {
         'dialogs.mobile'(val){
             sidebar.slideShow()
+            val ? document.body.style = 'overflow: hidden' : document.body.style = 'overflow: visible';
         }
     }
 })
