@@ -1,10 +1,12 @@
 .submenu
     display: none
     width: calc(100% - 360px)
+    bottom: 0
+    background-color: rgba(bg-color(main), .7)
 
     &.active
         display: block
-        position: absolute
+        position: fixed
         left: 360px
         z-index: 100
 
@@ -13,12 +15,6 @@
         flex-wrap: wrap
         max-width: 1440px
         margin: 0 auto
-        padding: 30px 15px 0
-        background-color: rgba(bg-color(main), .7)
-
-    &__item
-        width: calc(100% / 4 - 30px)
-        margin: 0 15px 30px
 
     &__link
         display: flex
@@ -27,7 +23,6 @@
         background-color: bg-color(main-light)
         border-radius: $radius
         border: 1px solid transparent
-        padding: 15px
         color: text-color(light)
         +transition()
 
@@ -40,13 +35,41 @@
     &__img
         margin-bottom: 15px
 
++media-breakpoint-up(breakpoints(xl))
+    .submenu
+
+        &__list
+            padding: 90px 15px 0
+
+        &__item
+            width: calc(100% / 4 - 30px)
+            margin: 0 15px 30px
+
+        &__link
+            padding: 15px
+
 +media-breakpoint-up(breakpoints(bsxl))
     .submenu
-        top: 100px
+        top: 0
 
-+media-breakpoint-up(breakpoints(lg))
++media-breakpoint-down(breakpoints(xl))
     .submenu
-        // height: calc(100% - 100px)
+        
+        &__list
+            padding: 65px 15px 0
+
+        &__item
+            width: calc(100% / 4 - 15px)
+            margin: 0 7.5px 15px
+
+        &__link
+            padding: 10px
+
+        &__img
+            height: 50px
+
+            img
+                height: 100%
 
 +media-breakpoint-down(breakpoints(bsxl))
     .submenu

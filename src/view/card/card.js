@@ -2,7 +2,8 @@ import './card.sass';
 import header from '../../components/header/header';
 import Vue from '../../../node_modules/vue/dist/vue';
 import Basket from '../../components/basket/basket';
-import callbackComponent from '../../components/dialog/callback/callback';
+// import callbackComponent from '../../components/dialog/callback/callback';
+import callbackComponent from '../../components/dialog/callback/phoneForm.vue';
 import carouselComponent from '../../components/dialog/carousel/carousel';
 import socialComponent from '../../components/social/social';
 import addToBasket from '../../components/dialog/addToBasket/addToBasket';
@@ -50,15 +51,8 @@ let card = new Vue({
         callbackComponent, carouselComponent, addToBasket, socialComponent
     },
     methods: {
-        showPhoneList(){ 
-            this.phoneList = !this.phoneList 
-            this.callbackDialog = false
-            this.carouselDialog = false
-            this.addToBasketDialog = false
-        },
         showCallbackDialog(){ 
             this.callbackDialog = !this.callbackDialog
-            this.phoneList = false 
             this.carouselDialog = false
             this.addToBasketDialog = false
         },
@@ -66,12 +60,10 @@ let card = new Vue({
             if(!this.carouselDialog) this.getUrls()
             this.carouselDialog = !this.carouselDialog 
             this.addToBasketDialog = false
-            this.phoneList = false
             this.callbackDialog = false
         },
         showAddToBasket(){
             this.addToBasketDialog = !this.addToBasketDialog
-            this.phoneList = false 
             this.carouselDialog = false
             this.callbackDialog = false
         },

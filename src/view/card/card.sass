@@ -46,7 +46,6 @@
         position: relative
         display: flex
         flex-direction: column
-        justify-content: space-between
 
         &-items
             margin-bottom: 25px
@@ -69,6 +68,8 @@
         flex-wrap: wrap
         justify-content: space-between
         position: relative
+        margin-top: auto
+        margin-bottom: 30px
 
     &__buy, &__callback
         align-items: center
@@ -76,8 +77,8 @@
 
     &__buy
         color: text-color(dark)
-        margin-bottom: 15px
-        width: 100%
+        // margin-bottom: 15px
+        width: calc(50% - 15px)
 
         img
             margin-right: 10px
@@ -94,23 +95,8 @@
         position: relative
 
     &__phones
-        position: absolute
-        top: calc(100% + 15px)
-        left: 0
         width: 100%
-        background-color: bg-color(main-light)
-        border-radius: 5px
-        padding: 15px
-
-        &:before
-            content: ''
-            display: flex
-            +size(20px)
-            position: absolute
-            top: -10px
-            transform: rotate(45deg)
-            right: 30px
-            background-color: bg-color(main-light)
+        background-color: bg-color(white)
 
     &__phone
         margin-bottom: 15px
@@ -119,7 +105,7 @@
             margin-bottom: 0
 
         *
-            color: text-color(light)
+            color: text-color(dark)
             +transition()
 
         &:hover *, &:active *

@@ -105,16 +105,9 @@
 +media-breakpoint-down(breakpoints(sm))
     .search
 
-        &__list
-            flex-direction: column
-
         &__item
-            margin-bottom: 15px
-            width: 100%
+            width: calc(100% - 115px)
 
-            &:last-child
-                margin-bottom: 0
-
-        &__btn
-            width: 100%
+            &:nth-child(1), &:nth-child(2)
+                display: none
 

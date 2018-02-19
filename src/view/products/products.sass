@@ -115,7 +115,7 @@
             .products
 
                 &__item
-                    min-width: $xs - 60
+                    min-width: 200px
                     flex-grow: 1
 
                 &__image
@@ -382,6 +382,20 @@
     .products
 
         &__list
+
+            &.block
+
+                .products__item
+                    width: calc(100% / 2 - 15px)
+                    margin: 0 7.5px 15px
+                    min-width: 0
+                    padding: 10px
+
+                .products__btn-about, .products__btn-callback
+                    width: 100%
+
+                .products__btn-callback
+                    margin-bottom: 15px
 
             .dialog.callback
                 right: -17px
