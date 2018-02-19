@@ -1,19 +1,28 @@
 import './card.sass';
-import header from '../../components/header/header';
+
+//region import modules
 import Vue from '../../../node_modules/vue/dist/vue';
-import Basket from '../../components/basket/basket';
-// import callbackComponent from '../../components/dialog/callback/callback';
-import callbackComponent from '../../components/dialog/callback/phoneForm.vue';
-import carouselComponent from '../../components/dialog/carousel/carousel';
-import socialComponent from '../../components/social/social';
-import addToBasket from '../../components/dialog/addToBasket/addToBasket';
-import Sidebar from '../../components/sidebar/sidedar';
-import mixin from '../../mixins/mixins'
 import VueResource from 'vue-resource';
 import VueMask from 'v-mask'
 import { VueMaskDirective } from 'v-mask'
 import SimpleVueValidation from 'simple-vue-validator';
 import { Validator } from 'simple-vue-validator';
+//endregion
+
+//region import components
+import header from '../../components/header/header';
+import Basket from '../../components/basket/basket';
+import callbackComponent from '../../components/dialog/callback/phoneForm.vue';
+import carouselComponent from '../../components/dialog/carousel/carousel';
+import socialComponent from '../../components/social/social';
+import addToBasket from '../../components/dialog/addToBasket/addToBasket';
+import Sidebar from '../../components/sidebar/sidedar';
+import Search from '../../components/search/search.vue';
+//endregion
+
+//region import mixins
+import mixin from '../../mixins/mixins'
+//endregion
 
 Vue.use(VueResource)
 Vue.use(VueMask);
@@ -48,7 +57,7 @@ let card = new Vue({
         }
     },
     components: {
-        callbackComponent, carouselComponent, addToBasket, socialComponent
+        callbackComponent, carouselComponent, addToBasket, socialComponent, Search
     },
     methods: {
         showCallbackDialog(){ 

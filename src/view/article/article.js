@@ -1,10 +1,14 @@
 import './article.sass'
 
-import header from '../../components/header/header';
+//region import modules
 import Vue from '../../../node_modules/vue/dist/vue';
-// import Basket from '../../components/basket/basket';
+//endregion
+
+//region import components
+import header from '../../components/header/header';
 import callbackComponent from '../../components/dialog/callback/callback';
-// import Search from '../../components/search/search';
+import Search from '../../components/search/search.vue';
+//emdregion
 
 import mixin from '../../mixins/mixins'
 
@@ -16,6 +20,7 @@ let article = new Vue({
     }, 
     methods: {
     },
+    components: { Search }
 })
 
 export default article

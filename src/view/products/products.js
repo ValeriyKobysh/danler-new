@@ -1,12 +1,20 @@
 import './products.sass'
+//region import components
 import header from '../../components/header/header';
 import Basket from '../../components/basket/basket';
 import callbackComponent from '../../components/dialog/callback/callback';
 import addToBasketComponent from '../../components/dialog/addToBasket/addToBasket';
 import socialComponent from '../../components/social/social'
-import mixin from '../../mixins/mixins'
+import Search from '../../components/search/search.vue';
+//end region
 
+//region import mixins
+import mixin from '../../mixins/mixins'
+//endregion
+
+//region import modules
 import Vue from '../../../node_modules/vue/dist/vue';
+//endregion
 
 let products = new Vue({
     el: '#products',
@@ -75,7 +83,7 @@ let products = new Vue({
         showAddToBasket() { this.addToBasket = !this.addToBasket }
     },
     components: {
-        callbackComponent, addToBasketComponent, socialComponent
+        callbackComponent, addToBasketComponent, socialComponent, Search
     },
     mounted(){
         const search = window.location.search;

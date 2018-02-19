@@ -1,1 +1,1 @@
-webpackJsonp([8],{76:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var a=n(77),i=(n.n(a),n(6),n(0)),c=n.n(i),l=(n(11),n(1));let o=new c.a({el:"#article",mixins:[l.a],data:{},methods:{}});t.default=o},77:function(e,t){}},[76]);
+webpackJsonp([8],{76:function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var a=t(77),c=(t.n(a),t(0)),o=t.n(c),i=(t(6),t(11),t(13)),s=t(1);let l=new o.a({el:"#article",mixins:[s.a],data:{},methods:{},components:{Search:i.a}});n.default=l},77:function(e,n){}},[76]);
