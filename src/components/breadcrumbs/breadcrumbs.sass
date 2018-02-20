@@ -1,5 +1,4 @@
 .breadcrumbs
-    margin-bottom: 30px
     display: flex
     align-items: center
 
@@ -7,7 +6,6 @@
         display: flex
         flex-wrap: wrap
         align-items: center
-        padding: 15px 30px 10px
         width: 100%
         min-height: 100px
         background-color: bg-color(main-light)
@@ -16,24 +14,8 @@
     &__item
         display: inline-flex
         align-items: center
-        margin-bottom: 5px
-
-        &:after
-            content: ''
-            display: flex
-            +size(15px, 1px)
-            background-color: bg-color(main)
-            // +transition()
-
-
-        &:last-child:after
-            content: none
-            // +size(0)
 
         &_active, &:hover
-
-            // &:after
-            //     background-color: bg-color(accent)
 
             .breadcrumbs__link
                 color: text-color(hover)
@@ -43,9 +25,35 @@
         color: text-color(light)
         font-size: rem(14px)
         height: 35px
-        border-radius: $radius
-        border: 1px solid bg-color(main)
         padding: 0 15px
         +alignment()
         +transition()
+
++media-breakpoint-up(breakpoints(sm))
+    .breadcrumbs
+        margin-bottom: 30px
+
+        &__list
+            padding: 15px 30px 10px
+
+        &__item
+            margin-bottom: 5px
+
+            &:after
+                content: ''
+                display: flex
+                +size(15px, 1px)
+                background-color: bg-color(main)
+
+            &:last-child:after
+                content: none
+
+        &__link
+            border-radius: $radius
+            border: 1px solid bg-color(main)
+
++media-breakpoint-down(breakpoints(sm))
+    .breadcrumbs
+        margin-bottom: 15px
+
 

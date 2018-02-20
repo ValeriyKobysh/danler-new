@@ -46,9 +46,6 @@
                 .sidebar__menu-icon, .sidebar__menu-chevron
                     fill: bg-color(accent)
 
-            &.mark
-                border-color: bg-color(accent)
-
         &-link
             display: flex
             align-items: center
@@ -163,6 +160,8 @@
 
             img
                 +size(100%)
+                border: 1px solid bg-color(white)
+                border-radius: $radius
 
     &__social
         margin-bottom: 30px

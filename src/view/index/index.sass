@@ -4,7 +4,7 @@
 @import '../../components/basket/basket.sass'
 @import '../../components/dialog/dialog.sass'
 @import '../../components/search/search.sass'
-@import '../../components/last-products/last-products.sass'
+// @import '../../components/last-products/last-products.sass'
 @import '../../components/excellence/excellence.sass'
 // @import '../../components/video/video.sass'
 @import '../../components/social/social.sass'
@@ -117,7 +117,7 @@
         
 
         &-wrap
-            padding-left: 15px
+            // margin-left: 15px
 
         &-all
             color: text-color(hover)
@@ -127,13 +127,15 @@
             margin-bottom: 30px
 
         &-list
-            padding: 30px
             width: 100%
             overflow: hidden
             outline: none
             position: relative
             background-color: bg-color(main-light)
             border-radius: 5px
+
+            // .flickity-viewport
+            //     height: auto!important
 
             .flickity-page-dots
                 position: absolute
@@ -188,10 +190,7 @@
                 fill: bg-color(accent)
 
         &-review
-            width: 80%
             text-align: center
-            font-size: rem(20px)
-            line-height: rem(32px)
 
     &__trust
         margin-bottom: 30px
@@ -312,6 +311,16 @@
                 font-size: rem(24px)
                 line-height: rem(32px)
 
+        &__review
+
+            &-list
+                padding: 30px
+
+            &-review
+                font-size: rem(20px)
+                line-height: rem(32px)
+                width: 80%
+
         &__trust
 
             &-slider
@@ -344,8 +353,6 @@
             &-image
                 // margin-right: 30px
 
-+media-breakpoint-between(breakpoints(lg), breakpoints(xl))
-
 +media-breakpoint-between(breakpoints(bsxl), breakpoints(xl))
     .index
 
@@ -358,11 +365,9 @@
         &__container
             padding: 30px
 
-+media-breakpoint-down(breakpoints(bsxl))
-    .index
-
-        &__slide
-            height: calc(100vh - 246px)
++media-breakpoint-between(breakpoints(sm), breakpoints(bsxl))
+    .index__slide
+        height: calc(100vh - 321px)
 
 +media-breakpoint-down(breakpoints(lg))
     .index
@@ -397,6 +402,20 @@
                 &.is-selected
                     +size(15px)
 
+        &__review
+
+            &-list
+                padding: 15px 0 45px
+
+            &-item
+                margin: 0 15px
+                width: calc(100% - 30px)
+
+            &-review
+                font-size: rem(14px)
+                line-height: rem(20px)
+                width: 100%
+
         &__trust
 
             &-slide
@@ -421,3 +440,9 @@
 
             &-line
                 display: none
+
++media-breakpoint-down(breakpoints(sm))
+    .index
+
+        &__slide
+            height: calc(100vh - 246px)

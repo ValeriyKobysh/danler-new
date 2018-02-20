@@ -38,6 +38,7 @@ let index = new Vue({
             accessibility: false,
             pageDots: true,
             prevNextButtons: false,
+            adaptiveHeight: true,
             autoPlay: 3000
         },
     },
@@ -82,11 +83,11 @@ let index = new Vue({
         Flickity, VueTyper, socialComponent, Callback, Search
     },
     created(){
-        const tabs = document.querySelector('.last-products__content-list').children.length
+        // const tabs = document.querySelector('.last-products__content-list').children.length
 
-        for (let i = 0; i < tabs; i++) {
-            i == 0 ? this.$set(this.lastProducts.tabs, i, true) : this.$set(this.lastProducts.tabs, i, false);
-        }
+        // for (let i = 0; i < tabs; i++) {
+        //     i == 0 ? this.$set(this.lastProducts.tabs, i, true) : this.$set(this.lastProducts.tabs, i, false);
+        // }
 
         const sliders = document.querySelector('.index__slider').children.length
 

@@ -2,7 +2,6 @@
     background-color: bg-color(main-light)
     border-radius: $radius
     padding: 15px
-    margin-bottom: 30px
     display: flex
 
     &__heading
@@ -73,7 +72,7 @@
         width: 100%
 
     &__btn
-        width: 100px
+        width: 45px
         text-align: center
         justify-content: center
         align-items: center
@@ -81,6 +80,7 @@
 +media-breakpoint-up(breakpoints(sm))
     .search
         flex-wrap: wrap
+        margin-bottom: 30px
 
         &__list
             flex-wrap: wrap
@@ -104,6 +104,7 @@
 
 +media-breakpoint-down(breakpoints(sm))
     .search
+        margin-bottom: 15px
 
         &__item
             width: calc(100% - 115px)

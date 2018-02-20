@@ -7,6 +7,10 @@ header.header#header
         button.header__mobile.header__btn(@click="toggleShow('mobile')")
             span(:class="{ active: dialogs.mobile }")
 
+        .header__logo
+            a.header__logo-link.link(href="/")
+                img(src=require("../../assets/image/logo.svg"), alt="")
+
         .header__buttons
             .header__phone-wrap
                 a(@click="toggleShow('phones')" href="javascript:;" :class="{ active: dialogs.phones }")

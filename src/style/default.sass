@@ -19,14 +19,12 @@
     display: flex
 
 .heading
-    font-size: rem(28px)
-    line-height: rem(32px)
     font-weight: 400
     color: text-color(light)
     width: 100%
     position: relative
     padding-bottom: 15px
-    margin-bottom: 30px
+    
     
     &:after
         content: ''
@@ -36,6 +34,18 @@
         display: flex
         +size(50%, 2px)
         background-color: bg-color(accent)
+
++media-breakpoint-up(breakpoints(sm))
+    .heading
+        font-size: rem(28px)
+        line-height: rem(32px)
+        margin-bottom: 30px
+
++media-breakpoint-down(breakpoints(sm))
+    .heading
+        font-size: rem(20px)
+        line-height: rem(28px)
+        margin-bottom: 15px
 
 html, body
     height: 100%
